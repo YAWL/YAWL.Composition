@@ -113,6 +113,7 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ObservableHelpers.cs" />
     <Compile Include="ObservableProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Properties\YAWL.Composition.rd.xml" />
