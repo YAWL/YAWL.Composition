@@ -9,7 +9,7 @@ namespace YAWL.Composition.Tests
         [TestMethod]
         public void TestNewString()
         {
-            Assert.AreEqual(null, new StringProperty());
+            Assert.AreEqual<string>(null, new StringProperty());
         }
 
         [TestMethod]
