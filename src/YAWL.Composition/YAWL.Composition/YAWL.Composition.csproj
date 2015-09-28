@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ObservableBoolProperty.cs" />
+    <Compile Include="ObservableCollectionExtensions.cs" />
     <Compile Include="ObservableHelpers.cs" />
     <Compile Include="ObservableProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
