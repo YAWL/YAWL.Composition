@@ -115,8 +115,10 @@
   <ItemGroup>
     <Compile Include="ObservableBoolProperty.cs" />
     <Compile Include="ObservableCollectionExtensions.cs" />
+    <Compile Include="ObservableCommand.cs" />
     <Compile Include="ObservableHelpers.cs" />
     <Compile Include="ObservableProperty.cs" />
+    <Compile Include="ObservableStringProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Properties\YAWL.Composition.rd.xml" />
   </ItemGroup>

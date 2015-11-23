@@ -1,75 +1,74 @@
 ﻿// Copyright (c) Massive Pixel.  All Rights Reserved.  Licensed under the MIT License (MIT). See License.txt in the project root for license information.
 
-using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
+using Xunit;
 
 namespace YAWL.Composition.Tests
 {
-    [TestClass]
     public class ObservableBoolPropertiesOperations
     {
-        [TestMethod]
+        [Fact]
         public void TestOrBetweenDefaultValuesIsFalse()
         {
             var prop1 = new ObservableBoolProperty();
             var prop2 = new ObservableBoolProperty();
-            var prop3 = prop1 || prop2;
+            var prop3 = prop1 | prop2;
 
-            Assert.AreEqual(prop3, false);
+            Assert.Equal(prop3, false);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestOrBetweenTrueAndFalseIsTrue()
         {
             var prop1 = new ObservableBoolProperty(true);
             var prop2 = new ObservableBoolProperty();
-            var prop3 = prop1 || prop2;
+            var prop3 = prop1 | prop2;
 
-            Assert.AreEqual(prop3, true);
+            Assert.Equal(prop3, true);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestOrBetweenFalseAndTrueIsTrue()
         {
             var prop1 = new ObservableBoolProperty();
             var prop2 = new ObservableBoolProperty(true);
-            var prop3 = prop1 || prop2;
+            var prop3 = prop1 | prop2;
 
-            Assert.AreEqual(prop3, true);
+            Assert.Equal(prop3, true);
         }
 
 
-        [TestMethod]
+        [Fact]
         public void TestOrBetweenTrueAndTrueIsTrue()
         {
             var prop1 = new ObservableBoolProperty(true);
             var prop2 = new ObservableBoolProperty(true);
-            var prop3 = prop1 || prop2;
+            var prop3 = prop1 | prop2;
 
-            Assert.AreEqual(prop3, true);
+            Assert.Equal(prop3, true);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestOrAfterChangingFirstToTrue()
         {
             var prop1 = new ObservableBoolProperty();
             var prop2 = new ObservableBoolProperty();
-            var prop3 = prop1 || prop2;
+            var prop3 = prop1 | prop2;
 
             prop1.Value = true;
 
-            Assert.AreEqual(prop3, true);
+            Assert.Equal(prop3, true);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestOrAfterChangingSecondToTrue()
         {
             var prop1 = new ObservableBoolProperty();
             var prop2 = new ObservableBoolProperty();
-            var prop3 = prop1 || prop2;
+            var prop3 = prop1 | prop2;
 
             prop2.Value = true;
 
-            Assert.AreEqual(prop3, true);
+            Assert.Equal(prop3, true);
         }
     }
 }

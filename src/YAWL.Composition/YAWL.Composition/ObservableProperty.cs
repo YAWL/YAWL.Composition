@@ -1,7 +1,9 @@
 ﻿// Copyright (c) Massive Pixel.  All Rights Reserved.  Licensed under the MIT License (MIT). See License.txt in the project root for license information.
 
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Reactive.Linq;
 
 namespace YAWL.Composition
 {
@@ -24,6 +26,8 @@ namespace YAWL.Composition
                 }
             }
         }
+
+        public IObservable<T> Changes { get; }
 
         #region INotifyPropertyChanged implementation
         public event PropertyChangedEventHandler PropertyChanged;
@@ -48,6 +52,11 @@ namespace YAWL.Composition
         public ObservableProperty(T value = default(T))
         {
             this.value = value;
+            Changes = Observable
+                .FromEventPattern<PropertyChangedEventHandler, PropertyChangedEventArgs>(
+                    h => PropertyChanged += h,
+                    h => PropertyChanged -= h)
+                .Select(_ => Value);
         }
 
         public static implicit operator T(ObservableProperty<T> property)

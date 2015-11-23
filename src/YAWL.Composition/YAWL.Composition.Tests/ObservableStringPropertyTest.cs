@@ -1,30 +1,29 @@
 ﻿// Copyright (c) Massive Pixel.  All Rights Reserved.  Licensed under the MIT License (MIT). See License.txt in the project root for license information.
 
-using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
+using Xunit;
 using StringProperty = YAWL.Composition.ObservableProperty<string>;
 
 namespace YAWL.Composition.Tests
 {
-    [TestClass]
     public class ObservableStringPropertyTest
     {
-        [TestMethod]
+        [Fact]
         public void TestNewString()
         {
-            Assert.AreEqual<string>(null, new StringProperty());
+            Assert.Equal<string>(null, new StringProperty());
         }
 
-        [TestMethod]
+        [Fact]
         public void TestNonNullParameter()
         {
-            Assert.AreEqual(string.Empty, new StringProperty(string.Empty));
+            Assert.Equal(string.Empty, new StringProperty(string.Empty));
         }
 
-        [TestMethod]
+        [Fact]
         public void TestNonTrivialParameter()
         {
             const string test = "some random string";
-            Assert.AreEqual(test, new StringProperty(test));
+            Assert.Equal(test, new StringProperty(test));
         }
     }
 }
