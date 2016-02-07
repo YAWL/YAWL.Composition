@@ -11,7 +11,7 @@ install:
 before_build:
   nuget restore "src/YAWL.Composition/YAWL.Composition.sln"
 
-configuration: Release
+configuration: AppVeyor
 platform: Any CPU
 
 build:
