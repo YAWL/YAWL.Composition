@@ -18,7 +18,4 @@ build:
   parallel: true   
   publish_nuget: true
   publish_nuget_symbols: true
-  verbosity: minimal
-
-build:
   verbosity: normal
