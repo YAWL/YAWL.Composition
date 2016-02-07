@@ -1,14 +1,24 @@
+branches:
+  only:
+    - master
+
 version: 0.1.{build}
 
 os: Visual Studio 2015
 install:
   - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
 
+before_build:
+  nuget restore "src/YAWL.Composition/YAWL.Composition.sln"
+
 configuration: Release
 platform: Any CPU
 
-before_build:
-  nuget restore "src/YAWL.Composition/YAWL.Composition.sln"
+build:
+  parallel: true   
+  publish_nuget: true
+  publish_nuget_symbols: true
+  verbosity: minimal
 
 build:
   verbosity: normal
