@@ -12,11 +12,7 @@ before_build:
   nuget restore "src/YAWL.Composition/YAWL.Composition.sln"
 
 configuration: AppVeyor
-platform:
- - x86
- - x64
- - ARM
- - Any CPU
+platform: Any CPU
 
 build:
   parallel: true
