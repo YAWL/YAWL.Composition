@@ -18,3 +18,4 @@ build:
   parallel: true
   project: src/YAWL.Composition/YAWL.Composition.sln
   verbosity: normal
+  publish_nuget: true
