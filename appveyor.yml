@@ -19,3 +19,12 @@ build:
   project: src/YAWL.Composition/YAWL.Composition.sln
   verbosity: normal
   publish_nuget: true
+
+deploy:
+  provider: NuGet
+  server:                  # remove to push to NuGet.org
+  api_key:
+    secure: LT8bWnUXsN/QwIft5V3jlpmBFz9k5TXXceJ8j42eHYOD79VJ9jaf+qlxq2vy173K
+  skip_symbols: false
+  symbol_server:           # remove to push symbols to SymbolSource.org
+  artifact: /.*\.nupkg/
