@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>YAWL.Composition</id>
+    <version>0.1.0-beta</version>
+	<title>Yet Another Windows Library - Composition for Reactive UI</title>
+    <authors>Toni Petrina</authors>
+    <owners>Toni Petrina</owners>
+	<licenseUrl>https://raw.githubusercontent.com/YAWL/YAWL.Composition/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/yawl/yawl.composition</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Contains helper classes for building reactive UI using MVVM pattern.</description>
+    <releaseNotes>https://github.com/YAWL/YAWL.Composition/releases</releaseNotes>
+    <copyright>Copyright 2016 ToniPetrina/Massive Pixel</copyright>
+    <tags>UWP</tags>
+  </metadata>
+</package>
