@@ -2,7 +2,13 @@ branches:
   only:
     - master
 
-version: 0.1.{build}-beta
+version: 0.1.{build}-ci
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
 
 os: Visual Studio 2015
 install:
@@ -17,8 +23,7 @@ platform: Any CPU
 build:
   parallel: true
   project: src/YAWL.Composition/YAWL.Composition/YAWL.Composition.csproj
-  verbosity: normal
-  publish_nuget: true
+  verbosity: minimal
   
 after_build:
   - ps: nuget pack src/YAWL.Composition/YAWL.Composition/YAWL.Composition.csproj -Version $env:APPVEYOR_BUILD_VERSION
