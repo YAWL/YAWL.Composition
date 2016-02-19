@@ -16,7 +16,7 @@ platform: Any CPU
 
 build:
   parallel: true
-  project: src/YAWL.Composition/YAWL.Composition.sln
+  project: src/YAWL.Composition/YAWL.Composition/YAWL.Composition.csproj
   verbosity: normal
   publish_nuget: true
   
