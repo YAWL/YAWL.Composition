@@ -21,7 +21,7 @@ build:
   publish_nuget: true
   
 after_build:
-  - ps: nuget pack src/YAWL.Composition/YAWL.Composition.csproj -Version $env:APPVEYOR_BUILD_VERSION
+  - ps: nuget pack src/YAWL.Composition/YAWL.Composition/YAWL.Composition.csproj -Version $env:APPVEYOR_BUILD_VERSION
 artifacts:
   - path: '**\YAWL.Composition.*.nupkg'
 
